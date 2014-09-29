@@ -6,8 +6,6 @@ Log raw HTTP requests and responses with ASP.NET WebApi and WebApi2.
 To install AspNetHttpLogger, run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
 ![nuget-installpackage](https://cloud.githubusercontent.com/assets/787816/4447419/adb615a8-480a-11e4-81a0-bd29c231ef4c.png)
 
-Visit the [nuget page](https://www.nuget.org/packages/AspNetHttpLogger/) for more information.
-
 ### Step 2 - Register LoggingHandler as a message handler
 ```csharp
 var loggingHandler = new LoggingHandler();
