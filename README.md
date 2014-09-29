@@ -3,10 +3,9 @@ AspNetHttpLogger
 Log raw HTTP requests and responses
 
 ### Step 1 - Install nuget
-In Visual Studio, open the Package Manager Console and type:
-```
-Install-Package AspNetHttpLogger
-```
+To install AspNetHttpLogger, run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+![nuget-installpackage](https://cloud.githubusercontent.com/assets/787816/4447419/adb615a8-480a-11e4-81a0-bd29c231ef4c.png)
+Visit the [nuget page](https://www.nuget.org/packages/AspNetHttpLogger/) for more information.
 
 ### Step 2 - Register LoggingHandler as a message handler
 ```csharp
