@@ -60,7 +60,7 @@ public class MvcApplication : System.Web.HttpApplication
     /// <param name="ex">Exception that occurred.</param>
     private void LoggingHandlerOnInternalError(HttpResponseMessage response, Exception ex)
     {
-        Log.ErrorException("Exception occurred LoggingHandler error", ex);
+        Log.ErrorException("Exception occurred in LoggingHandler.", ex);
 
         // Send information about the error to our Raygun exception tracking service
         var raygun = DependencyResolver.Current.GetService<IRaygunService>();
