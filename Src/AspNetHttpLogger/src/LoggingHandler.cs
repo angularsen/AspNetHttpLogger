@@ -177,8 +177,17 @@ namespace AspNetHttpLogger
         {
             if (request == null) throw new ArgumentNullException("request");
 
-            string userName = HttpContext.Current.User.Identity.GetUserName();
-            return userName;
+            // When ran on a background thread HttpContext.Current will evaluate to null raising a NullReference exception
+            try
+            {
+                string userName = HttpContext.Current.User.Identity.GetUserName();
+                return userName;
+            }
+            catch (NullReferenceException)
+            {
+                return null;
+            }
+            
         }
 
         /// <summary>
