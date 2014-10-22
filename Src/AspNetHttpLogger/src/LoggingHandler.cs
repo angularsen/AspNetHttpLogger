@@ -32,6 +32,13 @@ namespace AspNetHttpLogger
         /// </summary>
         private readonly int _maxLoggedContentLength;
 
+        private static HttpContextBase _httpContext;
+
+        public LoggingHandler(HttpContextBase context)
+        {
+            _httpContext = context;
+        }
+
         [PublicAPI]
         public LoggingHandler(int maxContentLength = 5*1000*1000,
             int maxLoggedContentLength = 100*1000,
@@ -180,7 +187,7 @@ namespace AspNetHttpLogger
             // When ran on a background thread HttpContext.Current will evaluate to null raising a NullReference exception
             try
             {
-                string userName = HttpContext.Current.User.Identity.GetUserName();
+                string userName = _httpContext.User.Identity.GetUserName();
                 return userName;
             }
             catch (NullReferenceException)
