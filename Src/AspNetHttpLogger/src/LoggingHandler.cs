@@ -177,17 +177,23 @@ namespace AspNetHttpLogger
         {
             if (request == null) throw new ArgumentNullException("request");
 
-            // When ran on a background thread HttpContext.Current will evaluate to null raising a NullReference exception
             try
             {
+                // Can be null when run on a background thread or worker role
+                if (HttpContext.Current == null || HttpContext.Current.User == null ||
+                    HttpContext.Current.User.Identity == null)
+                {
+                    return null;
+                }
+
                 string userName = HttpContext.Current.User.Identity.GetUserName();
                 return userName;
             }
-            catch (NullReferenceException)
+            catch (Exception e)
             {
+                Trace.TraceError(e.ToString());
                 return null;
             }
-            
         }
 
         /// <summary>
