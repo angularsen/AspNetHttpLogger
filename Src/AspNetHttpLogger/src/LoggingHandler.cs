@@ -74,7 +74,8 @@ namespace AspNetHttpLogger
                 string relativeUrl = request.RequestUri.AbsolutePath;
                 Guid requestId = GetCorrelationId(request);
                 string shortRequestId = GetShortRequestId(requestId);
-                string logSummary = string.Format("#{3} HTTP {0} - {1} {2}", (int) response.StatusCode, method, relativeUrl, shortRequestId);
+                string logSummary = string.Format("#{3} HTTP {0} - {1} {2}", (int) response.StatusCode, method,
+                    relativeUrl, shortRequestId);
                 string userName = GetUserName(request) ?? "<no user>";
 
                 string requestContent = await GetContentStringAsync(request.Content);
