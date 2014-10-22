@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>AspNetHttpLogger</id>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <title>AspNetHttpLogger</title>
     <authors>Andreas Gullberg Larsen</authors>
     <owners>Andreas Gullberg Larsen</owners>
@@ -10,12 +10,13 @@
       Log the raw HTTP requests and responses of your ASP.NET WebApi and WebApi2.
     </description>
     <releaseNotes>
+      Fix null reference when run on background thread or worker role.
     </releaseNotes>
     <summary>
       Log the raw HTTP requests and responses of your ASP.NET WebApi and WebApi2.
     </summary>
     <language>en-US</language>
-    <projectUrl>https://nuget.org/packages/AspNetHttpLogger</projectUrl>
+    <projectUrl>https://github.com/anjdreas/AspNetHttpLogger/</projectUrl>
     <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>https://github.com/anjdreas/AspNetHttpLogger/blob/master/LICENSE</licenseUrl>

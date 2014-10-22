@@ -74,7 +74,8 @@ namespace AspNetHttpLogger
                 string relativeUrl = request.RequestUri.AbsolutePath;
                 Guid requestId = GetCorrelationId(request);
                 string shortRequestId = GetShortRequestId(requestId);
-                string logSummary = string.Format("#{3} HTTP {0} - {1} {2}", (int) response.StatusCode, method, relativeUrl, shortRequestId);
+                string logSummary = string.Format("#{3} HTTP {0} - {1} {2}", (int) response.StatusCode, method,
+                    relativeUrl, shortRequestId);
                 string userName = GetUserName(request) ?? "<no user>";
 
                 string requestContent = await GetContentStringAsync(request.Content);
@@ -177,8 +178,23 @@ namespace AspNetHttpLogger
         {
             if (request == null) throw new ArgumentNullException("request");
 
-            string userName = HttpContext.Current.User.Identity.GetUserName();
-            return userName;
+            try
+            {
+                // Can be null when run on a background thread or worker role
+                if (HttpContext.Current == null || HttpContext.Current.User == null ||
+                    HttpContext.Current.User.Identity == null)
+                {
+                    return null;
+                }
+
+                string userName = HttpContext.Current.User.Identity.GetUserName();
+                return userName;
+            }
+            catch (Exception e)
+            {
+                Trace.TraceError(e.ToString());
+                return null;
+            }
         }
 
         /// <summary>
