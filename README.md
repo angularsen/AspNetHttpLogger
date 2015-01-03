@@ -22,8 +22,7 @@ public class MvcApplication : System.Web.HttpApplication
     public void Application_Start()
     {
         // Other setup stuff to peform on startup..
-
-        EnableRequestResponseLogging(httpConfiguration);
+        GlobalConfiguration.Configure(EnableRequestResponseLogging);
     }
 
     private void EnableRequestResponseLogging(HttpConfiguration httpConfiguration)
