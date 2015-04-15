@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
-using AspNetHttpLogger.Annotations;
+using JetBrains.Annotations;
 using AspNetHttpLogger.Extensions;
 
 namespace AspNetHttpLogger

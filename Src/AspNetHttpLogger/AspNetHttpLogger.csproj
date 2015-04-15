@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JetBrains.Annotations">
+      <HintPath>..\packages\JetBrains.Annotations.9.1.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
@@ -47,7 +50,6 @@
     <Compile Include="src\Extensions\IdentityExtensions.cs" />
     <Compile Include="src\LogEvent.cs" />
     <Compile Include="src\LoggingHandler.cs" />
-    <Compile Include="src\Properties\Annotations.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Package.nuspec">
@@ -56,6 +58,7 @@
     <None Include="NuGet.config" />
     <None Include="NuGetPackage.ps1" />
     <None Include="NuGetSetup.ps1" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="NuGet.exe" />
