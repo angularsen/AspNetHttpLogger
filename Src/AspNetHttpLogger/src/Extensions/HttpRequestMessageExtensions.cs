@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.Net.Http;
-using AspNetHttpLogger.Annotations;
+using JetBrains.Annotations;
 
 namespace AspNetHttpLogger.Extensions
 {
