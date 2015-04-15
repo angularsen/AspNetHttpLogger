@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>AspNetHttpLogger</id>
-    <version>1.2.2</version>
+    <version>1.3.0</version>
     <title>AspNetHttpLogger</title>
     <authors>Andreas Gullberg Larsen</authors>
     <owners>Andreas Gullberg Larsen</owners>
@@ -10,7 +10,7 @@
       Log the raw HTTP requests and responses of your ASP.NET WebApi and WebApi2.
     </description>
     <releaseNotes>
-      Fix null reference when run on background thread or worker role.
+      Make R# annotations internal
     </releaseNotes>
     <summary>
       Log the raw HTTP requests and responses of your ASP.NET WebApi and WebApi2.
