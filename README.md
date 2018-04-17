@@ -2,6 +2,13 @@ AspNetHttpLogger
 ================
 Log raw HTTP requests and responses with ASP.NET WebApi and WebApi2.
 
+### WARNING! This approach is not working with OWIN pipeline
+I have not addressed this code in ages and it broke when OWIN was introduced in ASP.net.
+
+Please see this issue for a possible workaround I have not verified:
+https://github.com/angularsen/AspNetHttpLogger/issues/3
+
+
 ### Step 1 - Install nuget
 To install AspNetHttpLogger, run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
 ![nuget-installpackage](https://cloud.githubusercontent.com/assets/787816/4447419/adb615a8-480a-11e4-81a0-bd29c231ef4c.png)
