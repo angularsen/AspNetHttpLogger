@@ -14,7 +14,8 @@ loggingHandler.ResponseCompleted += DoSomething;
 GlobalConfiguration.Configuration.MessageHandlers.Add(loggingHandler);
 ```
 
-###Example code###
+### Example code
+
 **Global.asax.cs**
 ```csharp
 public class MvcApplication : System.Web.HttpApplication
