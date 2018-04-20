@@ -8,6 +8,7 @@ I have not addressed this code in ages and it broke when OWIN was introduced in 
 Please see this issue for a possible workaround I have not verified:
 https://github.com/angularsen/AspNetHttpLogger/issues/3
 
+If you are using IIS you can also consider using Failed Request Tracing as detailed in #5.
 
 ### Step 1 - Install nuget
 To install AspNetHttpLogger, run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
